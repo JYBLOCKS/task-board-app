@@ -66,11 +66,6 @@ The focus here is on optimizing the user experience when working in real-time wi
 3. **UX/UI**: Good eye for design and a smooth user experience.
 4. **Testing**: Validate the robustness of the application with unit or integration tests.
 
-### Delivery Times
-
-From the moment you received this test, you have 5 days to complete it. Good luck!
-
-If you have any doubts please contact jorge@outbuild.com
 
 > [!IMPORTANT]
 >
