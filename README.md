@@ -59,15 +59,6 @@ The focus here is on optimizing the user experience when working in real-time wi
 1. **Documentation**: Provide clear documentation about the code structure and decisions made.
 2. **Testing**: Implement unit tests and/or integration tests for the main functions of the application (task creation and movement, real-time presence).
 
-### Final Evaluation:
-
-1. **Real time collaboration**: Ability to synchronize and manage multiple users connected in real-time.
-2. **Frontend skills**: Competence with modern Front End technologies, state management, and performance optimization.
-3. **UX/UI**: Good eye for design and a smooth user experience.
-4. **Testing**: Validate the robustness of the application with unit or integration tests.
-
-
 > [!IMPORTANT]
->
 > 1. The code must be available in a public repository (GitHub, GitLab, etc.), and if additional installation or configuration is required, it should be detailed in the Readme.
 > 2. If, when pulling the code from the repository, it doesn’t compile, it will automatically be considered as not submitted.
