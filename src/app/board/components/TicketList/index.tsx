@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Stack, Typography } from "@mui/material";
 import TicketWrapper from "../Ticket/components/TicketWrapper";
 import { TicketListType } from "./TicketList.type";
 import { theme } from "@/styles/theme";
@@ -9,8 +9,10 @@ function TicketList(props: TicketListType) {
   return (
     <Card
       sx={{
-        minWidth: 300,
+        display: "fixed",
+        minWidth: 308,
         borderRadius: "10px",
+        zIndex: 0,
         background: theme.palette.primary.main,
       }}
     >
@@ -21,9 +23,11 @@ function TicketList(props: TicketListType) {
         >
           {props.title}
         </Typography>
-        {props.tickets.map((item) => (
-          <TicketWrapper key={item.id} {...item} />
-        ))}
+        <Stack flexDirection={"column"} spacing={2}>
+          {props.tickets.map((item) => (
+            <TicketWrapper key={item.id} {...item} />
+          ))}
+        </Stack>
       </CardContent>
     </Card>
   );
