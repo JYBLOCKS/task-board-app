@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { X } from "@phosphor-icons/react";
 import { TicketDialogProps } from "./TicketDialogTypes";
+import { AddTicket } from "../forms";
 
 function TicketDialog({ open, onClickOpenDialog }: TicketDialogProps) {
   return (
@@ -28,7 +29,7 @@ function TicketDialog({ open, onClickOpenDialog }: TicketDialogProps) {
             <X size={20} />
           </IconButton>
         </Stack>
-
+        <AddTicket />
       </DialogContent>
     </Dialog>
   );

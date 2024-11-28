@@ -21,6 +21,7 @@ function TicketList(props: TicketListType) {
         sx={{
           display: "fixed",
           minWidth: 308,
+          minHeight: 200,
           borderRadius: "10px",
           zIndex: 0,
           background: theme.palette.primary.main,

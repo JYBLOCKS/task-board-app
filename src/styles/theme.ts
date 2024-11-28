@@ -27,7 +27,15 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: "8px",
-          backgroundColor: "#219ebc"
+          backgroundColor: "#219ebc",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+          borderRadius: "4px",
         },
       },
     },
