@@ -7,11 +7,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import TicketWrapper from "../Ticket/components/TicketWrapper";
+import { TicketWrapper, TicketDialogWrapper } from "../";
 import { TicketListType } from "./TicketList.type";
 import { theme } from "@/styles/theme";
 import { Plus } from "@phosphor-icons/react";
-import { TicketFormWrapper } from "../forms";
 import { useOpenDialog } from "@/hooks/useOpenDialog";
 
 function TicketList(props: TicketListType) {
@@ -41,7 +40,7 @@ function TicketList(props: TicketListType) {
               {props.title}
             </Typography>
             <IconButton onClick={onClickOpenDialog}>
-              <Plus size={24} color={theme.palette.secondary.main} />
+              <Plus size={18} color={theme.palette.secondary.main} />
             </IconButton>
           </Stack>
           <Stack flexDirection={"column"} spacing={2}>
@@ -51,7 +50,7 @@ function TicketList(props: TicketListType) {
           </Stack>
         </CardContent>
       </Card>
-      <TicketFormWrapper open={open} onClickOpenDialog={onClickOpenDialog} />
+      <TicketDialogWrapper open={open} onClickOpenDialog={onClickOpenDialog} />
     </>
   );
 }

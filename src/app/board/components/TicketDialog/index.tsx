@@ -7,12 +7,16 @@ import {
   Typography,
 } from "@mui/material";
 import { X } from "@phosphor-icons/react";
-import { TicketFromProps } from "./TicketFormTypes";
+import { TicketDialogProps } from "./TicketDialogTypes";
 
-function TicketForm({ open, onClickOpenDialog }: TicketFromProps) {
+function TicketDialog({ open, onClickOpenDialog }: TicketDialogProps) {
   return (
     <Dialog open={open} onClose={onClickOpenDialog}>
-      <DialogContent sx={{ width: 350 }}>
+      <DialogContent
+        sx={{
+          width: 350,
+        }}
+      >
         <Stack
           width={"100%"}
           flexDirection={"row"}
@@ -24,9 +28,10 @@ function TicketForm({ open, onClickOpenDialog }: TicketFromProps) {
             <X size={20} />
           </IconButton>
         </Stack>
+
       </DialogContent>
     </Dialog>
   );
 }
 
-export default TicketForm;
+export default TicketDialog;

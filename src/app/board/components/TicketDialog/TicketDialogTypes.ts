@@ -1,4 +1,4 @@
-export interface TicketFromProps {
+export interface TicketDialogProps {
   open: boolean;
   onClickOpenDialog: () => void;
 }
