@@ -1,5 +1,5 @@
 import { theme } from "@/styles/theme";
-import { CssBaseline, Box, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, Stack, ThemeProvider } from "@mui/material";
 import type { Metadata } from "next";
 import { NavBar } from "@/components/index";
 
@@ -20,7 +20,9 @@ export default function RootLayout({
           <CssBaseline />
           <Box sx={{ p: 0, m: 0 }}>
             <NavBar />
-            {children}
+            <Stack position={"relative"} top={48.4}>
+              {children}
+            </Stack>
           </Box>
         </ThemeProvider>
       </body>

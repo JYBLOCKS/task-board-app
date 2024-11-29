@@ -1,4 +1,4 @@
-import { TicketType } from "../Ticket/Ticket.type";
+import { TicketType } from "./Ticket.type";
 
 export type TicketListType = {
   id: string;

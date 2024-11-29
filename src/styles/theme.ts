@@ -4,33 +4,25 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#001d3d",
+      main: "#1e1e5d",
     },
     secondary: {
-      main: "#219ebc",
+      main: "#439093",
     },
     error: {
-      main: "#e63946",
+      main: "#ed565d",
     },
     success: {
-      main: "#023047",
+      main: "#1aad2b",
     },
     warning: {
       main: "#219ebc",
     },
     background: {
-      default: "#000814",
+      default: "#f3f4f5",
     },
   },
   components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          borderRadius: "8px",
-          backgroundColor: "#219ebc",
-        },
-      },
-    },
     MuiTextField: {
       styleOverrides: {
         root: {

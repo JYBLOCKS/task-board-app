@@ -1,8 +1,15 @@
 "use client";
 
-import { Card, CardContent, Typography } from "@mui/material";
-import { TicketType } from "./Ticket.type";
+import {
+  Card,
+  CardContent,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { TicketType } from "../../../../types/Ticket.type";
 import { theme } from "@/styles/theme";
+import { DotsThree } from "@phosphor-icons/react";
 
 function Ticket({ id, name, description, create_at }: TicketType) {
   console.log(id);
@@ -13,19 +20,29 @@ function Ticket({ id, name, description, create_at }: TicketType) {
           minWidth: 275,
           borderRadius: "10px",
           zIndex: 1000,
-          backgroundColor: theme.palette.background.default + "7d",
+          backgroundColor: theme.palette.primary.main + "50",
         }}
       >
+        <Stack
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="flex-start"
+          px={1}
+          pt={0.5}
+        >
+          <Typography color="white" variant="h5" px={1} pt={1.5}>
+            {name}
+          </Typography>
+          <IconButton>
+            <DotsThree size={20} />
+          </IconButton>
+        </Stack>
         <CardContent
           sx={{
-            padding: 2,
-            pb: 1,
+            pt: 0,
             ":last-child": { pb: 1 },
           }}
         >
-          <Typography color="white" variant="h5">
-            {name}
-          </Typography>
           <Typography
             variant="body2"
             color="white"

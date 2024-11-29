@@ -1,4 +1,3 @@
-"use client";
 import TicketForm from "..";
 import { TicketDialogProps } from "../TicketDialogTypes";
 

@@ -1,7 +1,5 @@
-"use client";
-
 import TicketList from "..";
-import { TicketListType } from "../TicketList.type";
+import { TicketListType } from "../../../../../types/TicketList.type";
 
 function TicketListWrapper(props: TicketListType) {
   return <TicketList {...props} />;
