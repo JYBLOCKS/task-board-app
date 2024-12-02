@@ -1,7 +1,7 @@
-import TicketForm from "..";
+import TicketDialog from "..";
 import { TicketDialogProps } from "../TicketDialogTypes";
 
 function TicketDialogWrapper(props: TicketDialogProps) {
-  return <TicketForm {...props} />;
+  return <TicketDialog {...props} />;
 }
 export default TicketDialogWrapper;

@@ -1,6 +1,5 @@
 "use client";
 import {
-  Button,
   Dialog,
   DialogContent,
   IconButton,
@@ -12,7 +11,12 @@ import { TicketDialogProps } from "./TicketDialogTypes";
 import { AddTicket } from "../forms";
 import { theme } from "@/styles/theme";
 
-function TicketDialog({ open, onClickOpenDialog }: TicketDialogProps) {
+function TicketDialog({
+  open,
+  onClickOpenDialog,
+  section,
+  board,
+}: TicketDialogProps) {
   return (
     <Dialog
       open={open}
@@ -39,29 +43,11 @@ function TicketDialog({ open, onClickOpenDialog }: TicketDialogProps) {
             <X size={20} />
           </IconButton>
         </Stack>
-        <AddTicket />
-
-        <Stack flexDirection="row" justifyContent="space-between">
-          <Button
-            variant="outlined"
-            color="error"
-            onClick={() => onClickOpenDialog()}
-          >
-            <Typography variant="body2" fontWeight={"bold"}>
-              Cancel
-            </Typography>
-          </Button>
-          <Button
-            variant="contained"
-            color="success"
-            type="submit"
-            onClick={() => onClickOpenDialog()}
-          >
-            <Typography variant="body2" color="white" fontWeight={"bold"}>
-              Success
-            </Typography>
-          </Button>
-        </Stack>
+        <AddTicket
+          section={section}
+          board={board}
+          onClickOpenDialog={onClickOpenDialog}
+        />
       </DialogContent>
     </Dialog>
   );

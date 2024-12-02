@@ -12,23 +12,26 @@ import { TicketListType } from "../../../../types/TicketList.type";
 import { Plus } from "@phosphor-icons/react";
 import { useOpenDialog } from "@/hooks/useOpenDialog";
 
-function TicketList(props: TicketListType) {
+function TicketList({ tickets, title, id, board, section }: TicketListType) {
   const { open, onClickOpenDialog } = useOpenDialog();
-  const maxHeight = () => {
-    if (props.tickets.length < 1) return 65;
-    return 183 * props.tickets.length;
+  const height = () => {
+    if (tickets.length < 1) return 65;
+    if (tickets.length === 1) return 183;
+    const finalHeight = 183 * tickets.length;
+    if (tickets.length === 3) return finalHeight - 130;
+    return finalHeight - 65;
   };
   const getColor = () => {
     const gray = "#b4b4b4";
     const yellow = "#e3d311";
     const green = "#22ac3e";
-    if (props.id.match("todo")) {
+    if (id.match("todo")) {
       return gray;
     }
-    if (props.id.match("inprogress")) {
+    if (id.match("inprogress")) {
       return yellow;
     }
-    if (props.id.match("done")) {
+    if (id.match("done")) {
       return green;
     }
     return gray;
@@ -39,7 +42,7 @@ function TicketList(props: TicketListType) {
         sx={{
           display: "fixed",
           minWidth: 308,
-          maxHeight: maxHeight(),
+          maxHeight: height(),
           borderRadius: "10px",
           zIndex: 0,
           background: getColor(),
@@ -53,20 +56,25 @@ function TicketList(props: TicketListType) {
             mb={2}
           >
             <Typography variant={"h4"} fontSize={14} color="white">
-              {props.title}
+              {title}
             </Typography>
             <IconButton onClick={onClickOpenDialog}>
               <Plus size={18} color="white" />
             </IconButton>
           </Stack>
           <Stack flexDirection={"column"} spacing={2}>
-            {props.tickets.map((item) => (
+            {tickets.map((item) => (
               <TicketWrapper key={item.id} {...item} />
             ))}
           </Stack>
         </CardContent>
       </Card>
-      <TicketDialogWrapper open={open} onClickOpenDialog={onClickOpenDialog} />
+      <TicketDialogWrapper
+        open={open}
+        onClickOpenDialog={onClickOpenDialog}
+        section={section}
+        board={board}
+      />
     </>
   );
 }

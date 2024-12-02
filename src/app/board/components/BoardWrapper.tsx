@@ -26,6 +26,8 @@ function BoardWrapper({
           id={`todo-${id}`}
           title={"To Do"}
           tickets={tickets.filter((item) => item.section === Section.todo)}
+          section={Section.todo}
+          board={id}
         />
         <TicketListWrapper
           id={`inprogress-${id}`}
@@ -33,11 +35,15 @@ function BoardWrapper({
           tickets={tickets.filter(
             (item) => item.section === Section.inProgress
           )}
+          section={Section.inProgress}
+          board={id}
         />
         <TicketListWrapper
           id={`done-${id}`}
           title={"Done"}
           tickets={tickets.filter((item) => item.section === Section.done)}
+          section={Section.done}
+          board={id}
         />
       </Stack>
     </motion.div>

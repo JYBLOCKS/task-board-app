@@ -10,9 +10,11 @@ import {
 import { TicketType } from "../../../../types/Ticket.type";
 import { theme } from "@/styles/theme";
 import { DotsThree } from "@phosphor-icons/react";
+import MenuButton from "./components/MenuBasic";
+import { useOpenMenu } from "./hooks/useOpenMenu";
 
 function Ticket({ id, name, description, create_at }: TicketType) {
-  console.log(id);
+  const { open, anchorEl, handleClose, handleClick } = useOpenMenu();
   return (
     <>
       <Card
@@ -33,9 +35,15 @@ function Ticket({ id, name, description, create_at }: TicketType) {
           <Typography color="white" variant="h5" px={1} pt={1.5}>
             {name}
           </Typography>
-          <IconButton>
-            <DotsThree size={20} />
+          <IconButton onClick={handleClick}>
+            <DotsThree size={20} color="white" />
           </IconButton>
+          <MenuButton
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            handleClose={handleClose}
+          />
         </Stack>
         <CardContent
           sx={{

@@ -35,6 +35,7 @@ const initialState: { tickets: TicketType[] } = {
       section: Section.inProgress,
       board: "jose",
     },
+    
     {
       id: "ticket-5",
       name: "ticket-5",
@@ -46,14 +47,21 @@ const initialState: { tickets: TicketType[] } = {
   ],
 };
 
-export const useTicketStore = create<{ tickets: TicketType[] }>((set) => ({
-  ...initialState,
-  addNewTicket: (ticket: TicketType) =>
-    set((state) => ({ tickets: [...state.tickets, ticket] })),
-  updateTicket: (ticket: TicketType) =>
-    set((state) => {
-      const ticketToUpdate = state.tickets.findIndex((item) => item.id);
-      state.tickets[ticketToUpdate] = ticket;
-      return state;
-    }),
-}));
+type Actions = {
+  addNewTicket: (ticket: TicketType) => void;
+  updateTicket: (ticket: TicketType) => void;
+};
+
+export const useTicketStore = create<{ tickets: TicketType[] } & Actions>(
+  (set) => ({
+    ...initialState,
+    addNewTicket: (ticket: TicketType) =>
+      set((state) => ({ tickets: [...state.tickets, ticket] })),
+    updateTicket: (ticket: TicketType) =>
+      set((state) => {
+        const ticketToUpdate = state.tickets.findIndex((item) => item.id);
+        state.tickets[ticketToUpdate] = ticket;
+        return state;
+      }),
+  })
+);

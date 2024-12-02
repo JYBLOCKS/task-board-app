@@ -15,14 +15,24 @@ export const theme = createTheme({
     success: {
       main: "#1aad2b",
     },
-    warning: {
+    info: {
       main: "#219ebc",
+    },
+    warning: {
+      main: "#FFB200",
     },
     background: {
       default: "#f3f4f5",
     },
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: "8px",
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {
